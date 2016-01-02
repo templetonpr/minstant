@@ -5,14 +5,16 @@
 
   Router.route('/', function () { // specify top level route, the page users see when arriving at site
     console.log("rendering root /");
+    
     this.render("navbar", {
       to: "header"
     });
+    
     this.render("lobby_page", {
       to: "main"
     });
+    
   });
-
 
   Router.route('/chat/:_id', function () { // specify route that allows current user to chat with another user
     
@@ -52,6 +54,7 @@
     this.render("navbar", {
       to: "header"
     });
+    
     this.render("chat_page", {
       to: "main"
     });

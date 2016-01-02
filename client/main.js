@@ -15,6 +15,7 @@
       });
       return user.profile.username;
     },
+    
     isMyUser: function (userId) {
       if (userId == Meteor.userId()) {
         return true;
@@ -22,6 +23,7 @@
         return false;
       }
     }
+    
   });
 
   Template.chat_page.helpers({

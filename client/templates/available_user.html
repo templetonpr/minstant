@@ -1,20 +1,20 @@
 <!-- display an individual user -->
 <template name="available_user">
-  <div class="col-md-2">
+  <div class="col-md-3 col-sm-4 col-xs-6">
    
     <div class="user_avatar">
      
       {{#if isMyUser _id}}
         <div class="bg-success">{{getUsername _id}} (YOU)
           <br/>
-          <img src="{{profile.avatar}}" class="avatar_img">
+          <img src="/{{profile.avatar}}" class="avatar_img">
         </div>
         
       {{else}}
         <a href="/chat/{{_id}}">
           {{getUsername _id}}
           <br/>
-          <img src="{{profile.avatar}}" class="avatar_img">
+          <img src="/{{profile.avatar}}" class="avatar_img">
         </a>
       {{/if}}
       
