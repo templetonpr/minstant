@@ -15,7 +15,7 @@
       });
       return user.profile.username;
     },
-    
+
     isMyUser: function (userId) {
       if (userId == Meteor.userId()) {
         return true;
@@ -23,7 +23,7 @@
         return false;
       }
     }
-    
+
   });
 
   Template.chat_page.helpers({
@@ -38,6 +38,24 @@
     other_user: function () {
       return "";
     },
+
+  });
+
+  Template.chat_message.helpers({
+
+    getUserById: function (sentBy) {
+      return Meteor.users.findOne({
+        _id: sentBy
+      }).profile.username;
+    },
+
+    messageBackgroundClass: function (sentBy) {
+      if (sentBy == Meteor.userId()) {
+        return "bg-success";
+      } else {
+        return "bg-info";
+      }
+    }
 
   });
 
@@ -60,6 +78,8 @@
         // push adds the message to the end of the array
 
         msgs.push({
+          timeStamp: new Date().toUTCString(),
+          sentBy: Meteor.user()._id,
           text: event.target.chat.value
         });
 

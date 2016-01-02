@@ -1,5 +1,7 @@
 <!-- simple template that displays a message -->
 <template name="chat_message">
-  someone said: {{text}}
-  <br>
+  <div class='{{messageBackgroundClass sentBy}}'>
+    <span class="text-muted">{{timeStamp}}</span> <span class="bold">{{getUserById sentBy}}</span> said: {{text}}
+    <br>
+  </div>
 </template>
