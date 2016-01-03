@@ -63,6 +63,7 @@
 
     'submit .js-send-chat': function (event) { // this event fires when the user sends a message on the chat page
       event.preventDefault(); // stop the form from triggering a page reload
+      /*
       var chat = Chats.findOne({ // see if we can find a chat object in the database to which we'll add the message
         _id: Session.get("chatId")
       });
@@ -87,6 +88,9 @@
         chat.messages = msgs; // put the messages array onto the chat object
         Chats.update(chat._id, chat); // update the chat object in the database.
       }
+      */
+      Meteor.call('sendMessage', Session.get("chatId"), event.target.chat.value);
+      event.target.chat.value = ""; // reset the form
     }
 
   });
