@@ -5,19 +5,20 @@
 
   Router.route('/', function () { // specify top level route, the page users see when arriving at site
     console.log("rendering root /");
-    
+
     this.render("navbar", {
       to: "header"
     });
-    
+
     this.render("lobby_page", {
       to: "main"
     });
-    
+
   });
 
   Router.route('/chat/:_id', function () { // specify route that allows current user to chat with another user
-    
+    var route = this;
+    /*    
     // the user they want to chat to has id equal to 
     // the id sent in after /chat/... 
     var otherUserId = this.params._id;
@@ -46,17 +47,26 @@
     } else { // there is a chat going already - use that. 
       chatId = chat._id;
     }
-    
-    if (chatId) { // save the id to the session
-      Session.set("chatId", chatId);
-    }
-    
-    this.render("navbar", {
+    */
+
+    route.render("navbar", {
       to: "header"
     });
-    
-    this.render("chat_page", {
+
+    route.render("loading", {
       to: "main"
     });
-    
+
+    Session.set('chatId', ""); // clear chatId
+
+    Meteor.call('getChat', this.params._id, function (err, res) {
+      if (err) { // error
+        console.log("getChat error...");
+      } else {
+        Session.set("chatId", res);
+        route.render("chat_page", {
+          to: "main"
+        });
+      }
+    });
   });

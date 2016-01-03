@@ -1,3 +1,11 @@
+Meteor.subscribe('chats', function(){
+  return Chats.find().fetch();
+});
+
+Meteor.subscribe('userData', function(){
+  return Meteor.users.find().fetch();
+});
+
   ///
   // helper functions
   ///
@@ -36,6 +44,7 @@
     },
 
     other_user: function () {
+      // display other user's username and avatar
       return "";
     },
 
