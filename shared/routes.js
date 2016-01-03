@@ -4,16 +4,22 @@
 
 
   Router.route('/', function () { // specify top level route, the page users see when arriving at site
-    console.log("rendering root /");
+    //console.log("rendering root /");
+    var route = this;
 
-    this.render("navbar", {
+    route.render("navbar", {
       to: "header"
     });
 
-    this.render("lobby_page", {
-      to: "main"
-    });
-
+    if (Meteor.user()) {
+      route.render("lobby_page", {
+        to: "main"
+      });
+    } else {
+      route.render("landing_page", {
+        to: "main"
+      });
+    }
   });
 
   Router.route('/chat/:_id', function () { // specify route that allows current user to chat with another user

@@ -43,10 +43,35 @@ Meteor.subscribe('userData', function(){
       return chat.messages;
     },
 
-    other_user: function () {
-      // display other user's username and avatar
-      return "";
+    other_user_name: function () {
+
+      var chat = Chats.findOne({
+        _id: Session.get("chatId")
+      });
+
+      if (chat.user1Id != Meteor.userId()){
+        var otherUser = chat.user1Id;
+      } else {
+        var otherUser = chat.user2Id;
+      }
+      
+      return Meteor.users.findOne({_id: otherUser}).profile.username;
     },
+    
+    other_user_avatar: function () {
+
+      var chat = Chats.findOne({
+        _id: Session.get("chatId")
+      });
+
+      if (chat.user1Id != Meteor.userId()){
+        var otherUser = chat.user1Id;
+      } else {
+        var otherUser = chat.user2Id;
+      }
+      
+      return Meteor.users.findOne({_id: otherUser}).profile.avatar;
+    }
 
   });
 
