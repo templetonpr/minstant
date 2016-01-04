@@ -85,3 +85,12 @@ Router.route('/about/', function () {
     to: "main"
   });
 });
+
+Router.route('/info/', function () {
+  this.render("navbar", {
+    to: "header"
+  });
+  this.render("landing_page", {
+    to: "main"
+  });
+});
