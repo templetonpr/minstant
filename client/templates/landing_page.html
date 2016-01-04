@@ -1,18 +1,63 @@
 <template name="landing_page">
   <h1 class="text-center">Welcome to Minstant!</h1>
-  <br>
-  <h4 class="text-center text-muted">You should probably log in...</h4>
-  <br>
-  
-  <h6>Temporary list of test users for easy copy/pasting:</h6>
-  <ul>
-    <li>user1@test.com - test123</li>
-    <li>user2@test.com - test123</li>
-    <li>user3@test.com - test123</li>
-    <li>user4@test.com - test123</li>
-    <li>user5@test.com - test123</li>
-    <li>user6@test.com - test123</li>
-    <li>user7@test.com - test123</li>
-    <li>user8@test.com - test123</li>
-  </ul>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <h3 class="text-center">Includes emoticons from <a href="https://atmospherejs.com/mattimo/emoticons">mattimo:emoticons</a></h3>
+      <div class="row">
+        <ul>
+          <div class="col-xs-12 col-sm-4">
+            <li>o_o O_O {{{parseEmoticons "o_o"}}}</li>
+            <li>:D :-D {{{parseEmoticons ":D"}}}</li>
+            <li>:) :-) =) =-) {{{parseEmoticons ":)"}}}</li>
+            <li>:( :-( {{{parseEmoticons ":("}}}</li>
+            <li>-_- {{{parseEmoticons "-_-"}}}</li>
+            <li>:P :-P {{{parseEmoticons ":P"}}}</li>
+            <li>:O :-O :o {{{parseEmoticons ":o"}}}</li>
+            <li>:smirk: {{{parseEmoticons ":smirk:"}}}</li>
+            <li>>:( :[ {{{parseEmoticons ">:("}}}</li>
+            <li>:ninja: {{{parseEmoticons ":ninja:"}}}</li>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <li>:nerd: {{{parseEmoticons ":nerd:"}}}</li>
+            <li>:S :-S {{{parseEmoticons ":S"}}}</li>
+            <li>:bashful: {{{parseEmoticons ":bashful:"}}}</li>
+            <li>:crying: {{{parseEmoticons ":crying:"}}}</li>
+            <li>:puke: {{{parseEmoticons ":puke:"}}}</li>
+            <li>:love: {{{parseEmoticons ":love:"}}}</li>
+            <li>:devil: {{{parseEmoticons ":devil:"}}}</li>
+            <li>:angel: {{{parseEmoticons ":angel:"}}}</li>
+            <li>8) 8-) (H) {{{parseEmoticons "8)"}}}</li>
+            <li>:wtf: {{{parseEmoticons ":wtf:"}}}</li>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <li>:sweating: {{{parseEmoticons ":sweating:"}}}</li>
+            <li>>:D {{{parseEmoticons ">:D"}}}</li>
+            <li>:spooked: {{{parseEmoticons ":spooked:"}}}</li>
+            <li>:embarrassed: {{{parseEmoticons ":embarrassed:"}}}</li>
+            <li>O.o {{{parseEmoticons "O.o"}}}</li>
+            <li>x-D {{{parseEmoticons "x-D"}}}</li>
+            <li>;) ;-) {{{parseEmoticons ";)"}}}</li>
+            <li>:\\ :-\\ {{{parseEmoticons ":\\"}}}</li>
+            <li>:beer: {{{parseEmoticons ":beer:"}}}</li>
+            <li>:poop: {{{parseEmoticons ":poop:"}}}</li>
+          </div>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h3>List of test users for easy copy/pasting:</h3>
+      <ul>
+        <li>user1@test.com - test123</li>
+        <li>user2@test.com - test123</li>
+        <li>user3@test.com - test123</li>
+        <li>user4@test.com - test123</li>
+        <li>user5@test.com - test123</li>
+        <li>user6@test.com - test123</li>
+        <li>user7@test.com - test123</li>
+        <li>user8@test.com - test123</li>
+      </ul>
+    </div>
+  </div>
+
 </template>

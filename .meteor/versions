@@ -14,6 +14,7 @@ caching-compiler@1.0.0
 caching-html-compiler@1.0.2
 callback-hook@1.0.4
 check@1.1.0
+coffeescript@1.0.11
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -47,6 +48,7 @@ launch-screen@1.0.4
 livedata@1.0.15
 localstorage@1.0.5
 logging@1.0.8
+mattimo:emoticons@0.0.4
 meteor@1.1.10
 meteor-base@1.0.1
 minifiers@1.1.7
@@ -58,6 +60,7 @@ mongo-id@1.0.1
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
+ogourment:settings@0.1.4
 ordered-dict@1.0.4
 promise@0.5.1
 random@1.0.5

@@ -1,7 +1,7 @@
 <!-- simple template that displays a message -->
 <template name="chat_message">
   <div class='{{messageBackgroundClass sentBy}}'>
-    <span class="text-muted">{{timeStamp}}</span> <span class="bold">{{getUserById sentBy}}</span> said: {{text}}
+    <span class="text-muted">{{timeStamp}}</span> <span class="bold">{{getUserById sentBy}}</span> said: {{{parseEmoticons text}}}
     <br>
   </div>
 </template>

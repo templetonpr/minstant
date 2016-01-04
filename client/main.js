@@ -18,7 +18,7 @@ Meteor.subscribe('userData', function(){
 
   Template.available_user.helpers({
     getUsername: function (userId) {
-      user = Meteor.users.findOne({
+      var user = Meteor.users.findOne({
         _id: userId
       });
       return user.profile.username;
@@ -44,30 +44,30 @@ Meteor.subscribe('userData', function(){
     },
 
     other_user_name: function () {
-
+      var otherUser;
       var chat = Chats.findOne({
         _id: Session.get("chatId")
       });
 
       if (chat.user1Id != Meteor.userId()){
-        var otherUser = chat.user1Id;
+        otherUser = chat.user1Id;
       } else {
-        var otherUser = chat.user2Id;
+        otherUser = chat.user2Id;
       }
       
       return Meteor.users.findOne({_id: otherUser}).profile.username;
     },
     
     other_user_avatar: function () {
-
+      var otherUser;
       var chat = Chats.findOne({
         _id: Session.get("chatId")
       });
 
       if (chat.user1Id != Meteor.userId()){
-        var otherUser = chat.user1Id;
+        otherUser = chat.user1Id;
       } else {
-        var otherUser = chat.user2Id;
+        otherUser = chat.user2Id;
       }
       
       return Meteor.users.findOne({_id: otherUser}).profile.avatar;
